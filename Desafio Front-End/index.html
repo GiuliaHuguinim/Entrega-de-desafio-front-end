@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Fornecedor/Produto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <form id="formulario">
+        <h1 class="title-principal">CADASTRO FORNECEDOR/PRODUTO</h1>
+        <div>
+            <div class="bordas">
+                <h2 class="title">Dados Do Fornecedor</h2>
+                <div class="grid-2-spaces">
+                    <div>
+                        <label for="razao-social">Razão Social:</label>
+                        <input class="input-commum" type="text" name="razao-social" id="razao-social" />
+                    </div>
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input class="input-commum" type="text" name="nome" id="nome" />
+                    </div>
+                    <div>
+                        <label for="cnpj">CNPJ:</label>
+                        <input class="input-commum" type="text" name="cnpj" id="cnpj">
+                    </div>
+                    <div>
+                        <label for="cep">Cep:</label>
+                        <input class="input-commum" type="number" name="cep" id="cep" />
+                    </div>
+                    <div>
+                        <label for="municipio-ins"> Inscrição Municipio:</label>
+                        <input class="input-commum" type="text" name="municipio-ins" id="municipio-ins" />
+                    </div>
+                    <div>
+                        <label for="estado-ins"> Inscrição Estado:</label>
+                        <input class="input-commum" type="text" name="estado-ins" id="estado-ins" />
+                    </div>
+                    <div>
+                        <label for="endereco">Endereço:</label>
+                        <input class="input-commum" type="text" name="endereco" id="endereco" />
+                    </div>
+                    <div>
+                        <label for="numero">Número</label>
+                        <input class="input-commum" type="number" name="numero " id="numero" />
+                    </div>
+                </div>
+                <div class="grid-1-spaces">
+                    <label for="complemento">Complemento:</label>
+                    <input class="input-commum" type="text" name="complemento" id="complemento" />
+                </div>
+                <div class="grid-3-spaces">
+                    <div>
+                        <label for="bairro">Bairro:</label>
+                        <input class="input-commum" type="text" name="bairro" id="bairro" />
+                    </div>
+                    <div>
+                        <label for="municipio">Municipio:</label>
+                        <input class="input-commum" type="text" name="municipio" id="municipio" />
+                    </div>
+                    <div>
+                        <label for="estado">Estado:</label>
+                        <input class="input-commum" type="text" name="estado" id="estado" />
+                    </div>
+                </div>
+                <div class="grid-3-spaces">
+                    <div>
+                        <label for="contato">Nome da Pessoa de Contato:</label>
+                        <input class="input-commum" type="text" name="contato" id="contato" />
+                    </div>
+                    <div>
+                        <label for="telefone">Telefone:</label>
+                        <input class="input-commum" type="number" name="telefone" id=" telefone" />
+                    </div>
+                    <div>
+                        <label for="email">E-mail:</label>
+                        <input class="input-commum" type="text" name="email" id="email" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="bordas">
+                <h2 class="title">Produtos</h2>
+                <div class="bordas-segundarias" id="produtos">
+                    <div id="`produto-1">
+                        <button class="btn-del" type="button" onclick="deletarProduto(1)">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <div class="flexbox">
+                            <div>
+                                <label for="produto">Produto 1:</label>
+                                <div class="grid-1-spaces">
+                                    <input class="input-commum" type="text" name="produto" id="produto" />
+                                </div>
+                                <div class="grid-4-spaces">
+                                    <div>
+                                        <label for="und_medida">Unidade de Medida:</label>
+                                        <select class="option-und" name="unidade-medida" required>
+                                            <option selected disabled value="unidade">Unidade</option>
+                                            <option value="kg">Kg</option>
+                                            <option value="litro">Litro</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="qdtde-estoque"> Quantidade em Estoque:</label>
+                                        <input class="input-commum" type="number" name="qdtde-estoque-1"
+                                            id="qdtde-estoque" />
+                                    </div>
+                                    <div>
+                                        <label for="valor-unitario">Valor Unitário:</label>
+                                        <input class="input-commum" type="number" name="valor-unitario-1"
+                                            id="valor-unitario" />
+                                    </div>
+                                    <div>
+                                        <label for="valor-total">Valor Total:</label>
+                                        <input class="input-commum" type="text" name="valor-total-1" id="valor-total" />
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="caixa" src=imagens/caixa.png />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn-adicionar-incluir" type="button" onclick="adicionarProduto()">Adicionar Produto</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bordas">
+            <h2 class="title">Anexos</h2>
+            <div class="bordas-segundarias">
+                <label for="itens">Itens:</label>
+                <div class="anexo-item">
+                    <div class="grid-3-spaces">
+                        <button class="btn-del" type="button" onclick="deleteAnexo(1)">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <button class="btn-olho" type="button" onclick="viewAnexo(1)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input hidden type="file" id="itens" name="itens" accept="image/*,.pdf" class="input-file" />
+                        <label for="itens" class="btn-adicionar-incluir">Incluir Anexo</label>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-salvar" onclick="salvarFornecedor(event)">Salvar Fornecedor</button>
+    </form>
+</body>
+<script src="script.js"></script>
+
+</html>
